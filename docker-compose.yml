@@ -12,7 +12,7 @@ services:
   app:
     build:
       context: .docker/php
-    restart: always
+    restart: no
     volumes:
       - .:/var/www/html
     ports:
@@ -21,7 +21,7 @@ services:
       - php_basic
   database:
     image: 'mysql:8'
-    restart: always
+    restart: no
     environment:
       MYSQL_ROOT_PASSWORD: secret
     ports:
